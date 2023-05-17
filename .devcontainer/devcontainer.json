@@ -1,0 +1,22 @@
+// devcontainer.json
+{
+    "name": "Python-Nodejs-Flask Dev Container",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": "..",
+        "args": { 
+            "VARIANT": "3.9"
+        }
+    },
+    "runArgs": [
+        "-u", "node"
+    ],
+    "settings": { 
+        "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "extensions": [
+        "ms-python.python",
+        "ms-azuretools.vscode-docker"
+    ],
+    "forwardPorts": [5000]
+}
