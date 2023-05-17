@@ -1,10 +1,6 @@
 from flask import Flask, jsonify, request
 
-from flask_cors import CORS
-
 app = Flask(__name__)
-CORS(app, supports_credentials=True)
-
 
 @app.route('/get/no-cors', methods=['GET'])
 def get_no_cors():
@@ -96,5 +92,8 @@ def home():
         '/get-and-options/with-cors': 'Route with CORS',
         '/get-and-options-and-credentials/with-cors': 'Route with CORS and credentials'
     }
-    return '<h2>' + route_names[request.path] + '</h2>'
+    
+    links = ''.join(f'<li><a href="{path}">{name}</a></li>' for path, name in route_names.items())
+    return f'<h2>Available Routes:</h2><ul>{links}</ul>'
+
 
