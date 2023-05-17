@@ -8,9 +8,6 @@
             "VARIANT": "3.9"
         }
     },
-    "runArgs": [
-        "-u", "node"
-    ],
     "settings": { 
         "terminal.integrated.shell.linux": "/bin/bash"
     },
